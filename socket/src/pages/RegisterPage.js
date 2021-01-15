@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from "axios";
-import makeTost from "../Toaster"
 import makeToast from '../Toaster';
 
 const RegisterPage = (props) => {
@@ -18,7 +17,6 @@ const RegisterPage = (props) => {
             email,
             password
         }).then(response => {
-            console.log(response.data);
             makeToast("success", response.data.message);
             props.history.push('/login');
         }).catch(err => {
