@@ -15,7 +15,7 @@ const LoginPage = (props) => {
             password
         }).then(response => {
             makeToast("success", response.data.message);
-            localStorage.setItem('Token');
+            localStorage.setItem('Token', response.data.token);
             props.history.push('/dashboard');
         }).catch(err => {
             makeToast("error", err.response.data.message);
