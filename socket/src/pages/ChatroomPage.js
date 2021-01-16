@@ -1,19 +1,29 @@
 import React from 'react';
-import io from "socket.io-client";
+import { withRouter } from 'react-router-dom';
 
-const ChatroomPage = ({match}) => {
+const ChatroomPage = ({match, socket}) => {
     const chatroomId = match.params.id;
-    const socket = io("http://localhost:3000", {
-        query: {
-            token: localStorage.getItem('Token')
-        }
-    });
 
     return (
-        <div>
-            Chatroom Page
+        <div className="chatroomPage">
+            <div className="chatroomSection">
+                <div className="cardHeader">Chatroom Name</div>
+                <div className="chatroomContent">
+                    <div className="message">
+                        <span className="otherMessage">Son:</span> qweqwe
+                    </div>
+                </div>
+                <div className="chatroomActions">
+                    <div>
+                        <input type="text" name="message" placeholder="Say Something!"/>
+                    </div>
+                    <div>
+                        <button className="join">Send</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
 
-export default ChatroomPage;
+export default withRouter(ChatroomPage);
