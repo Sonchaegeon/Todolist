@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import makeToast from '../Toaster';
 
 const LoginPage = (props) => {
@@ -17,6 +18,7 @@ const LoginPage = (props) => {
             makeToast("success", response.data.message);
             localStorage.setItem('Token', response.data.token);
             props.history.push('/dashboard');
+            props.setupSocket();
         }).catch(err => {
             makeToast("error", err.response.data.message);
         });
@@ -40,4 +42,4 @@ const LoginPage = (props) => {
     );
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);

@@ -9,7 +9,7 @@ const IndexPage = (props) => {
             props.history.push("/dashboard");
         }
         // eslint-diable-nextline
-    }, [0])
+    })
 
     return (
         <div>
