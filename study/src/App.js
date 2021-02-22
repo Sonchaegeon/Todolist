@@ -1,12 +1,10 @@
 import React from 'react';
-import Hello from './Hello';
+import InputSample from './InputSample';
 
 function App() {
   return (
     <div>
-      <Hello />
-      <Hello />
-      <Hello />
+      <InputSample />
     </div>
   );
 }
