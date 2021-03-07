@@ -9,25 +9,7 @@ function User({ user }) {
   );
 }
 
-function UserList() {
-  const users = [
-    {
-      id: 1,
-      username: '손채건',
-      email: 'thscorjs1002@naver.com',
-    },
-    {
-      id: 2,
-      username: '조호원',
-      email: 'howon@naver.com',
-    },
-    {
-      id: 3,
-      username: '정지원',
-      email: 'jiwon@naver.com',
-    },
-  ];
-
+function UserList({ users }) {
   return (
     <div>
       {users.map((user) => (
