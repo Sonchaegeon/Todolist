@@ -64,16 +64,16 @@ $pink: #f06595;
     @include button-color($pink);
   }
 
-  background: $blue;
-  &:hover {
-    background: lighten($blue, 10%);
-  }
-
-  &:active {
-    background: darken($blue, 10%);
-  }
-
   & + & {
     margin-left: 1rem;
+  }
+
+  &.fullWidth {
+    width: 100%;
+    justify-content: center;
+    & + & {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
   }
 }
