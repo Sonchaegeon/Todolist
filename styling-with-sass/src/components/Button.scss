@@ -1,4 +1,16 @@
 $blue: #228be6;
+$gray: #495057;
+$pink: #f06595;
+
+@mixin button-color($color) {
+  background: $color;
+  &:hover {
+    background: lighten($color, 10%);
+  }
+  &:active {
+    background: darken($color, 10%);
+  }
+}
 
 .Button {
   display: inline-flex;
@@ -29,6 +41,18 @@ $blue: #228be6;
     font-size: 0.875rem;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  &.blue {
+    @include button-color($blue);
+  }
+
+  &.gray {
+    @include button-color($gray);
+  }
+
+  &.pink {
+    @include button-color($pink);
   }
 
   background: $blue;
