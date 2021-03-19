@@ -1,11 +1,8 @@
 import React from 'react';
-import Greetings from './components/Greetings';
+import ReducerSample from './components/ReducerSample';
 
 const App: React.FC = () => {
-  const onClick = (name: string) => {
-    console.log(`${name} says hello`);
-  };
-  return <Greetings name="Junjoy" onClick={onClick} />;
+  return <ReducerSample />;
 };
 
 export default App;
